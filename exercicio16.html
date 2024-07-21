@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(29, 103, 128);
+        }
+
+        section{
+            width: 350px;
+            height: 400px;
+            background-color: rgb(3, 139, 230);
+            margin: auto;
+            margin-top: 80px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        input{
+            background-color: transparent;
+            border: 2px solid rgb(251, 251, 251);
+            outline: none;
+        }
+
+        h4{
+            text-align: left;
+        }
+
+        section .btn{
+            cursor: pointer;
+        }
+
+        div{
+            text-align: left;
+        }
+
+        select{
+            display: block;
+            padding: 10px;
+            width: 50%; 
+            margin: auto;
+            text-align: center;
+            height: 300px;
+            line-height: 2rem;
+        }
+
+        select option{
+            margin-top: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <section>
+        <h1>TABUADA</h1>
+        <p>
+            Número: <input type="number" name="" id="numero"> <input type="button" value="Contar" onclick="contar()">
+        </p>
+        <div>
+            <select name="sele" id="sele" size="10">
+            </select>
+        </div>
+    </section>
+
+    <script>
+        function contar(){
+            var numero = window.document.getElementById('numero')
+            var tabuada = window.document.getElementById('sele')
+
+            if (numero.value.length == 0){
+                alert('Porfavor, digite um número!')
+            } else{
+                var n = Number(numero.value)
+                var c = 1
+                tabuada.innerHTML=''
+                for (var c =1; (c <=10); c++){
+                    var item = document.createElement('option')
+                    item.text = `${n} x ${c} = ${n*c}`
+                    tabuada.appendChild(item)
+                }
+            }
+        }
+      
+    </script>
+    
+</body>
+</html>
